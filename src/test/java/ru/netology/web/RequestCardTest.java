@@ -1,9 +1,11 @@
 package ru.netology.web;
 
+import com.codeborne.selenide.Configuration;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.sql.Timestamp;
 import java.time.Duration;
@@ -17,6 +19,14 @@ class RequestCardTest {
 
     @BeforeEach
     public void init() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments(
+                "--headless",
+                "--disable-dev-shm-usage",
+                "--no-sandbox",
+                "--remote-allow-origins=*"
+                );
+        Configuration.browserCapabilities = options;
         open("http://localhost:9999");
     }
 
