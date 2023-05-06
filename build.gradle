@@ -23,4 +23,7 @@ dependencies {
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'selenide.disable-dev-shm-usage', System.getProperty('selenide.disable-dev-shm-usage')
+    systemProperty 'selenide.no-sandbox', System.getProperty('selenide.no-sandbox')
+    systemProperty 'selenide.remote-allow-origins', System.getProperty('selenide.remote-allow-origins=*')
 }

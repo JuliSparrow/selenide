@@ -1,8 +1,6 @@
 package ru.netology.web;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.time.DateFormatUtils;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -16,11 +14,6 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 class RequestCardTest {
-
-    @BeforeAll
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
-    }
 
     @BeforeEach
     public void init() {
@@ -265,5 +258,7 @@ class RequestCardTest {
         $$(".button .button__text").find(exactText("Забронировать")).click();
         $("[data-test-id=agreement]").shouldHave(cssClass("input_invalid"));
     }
+
+
 }
 
