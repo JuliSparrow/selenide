@@ -21,13 +21,6 @@ class RequestCardTest {
 
     @BeforeEach
     public void setup() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments(
-                "--disable-dev-shm-usage",
-                "--no-sandbox",
-                "--remote-allow-origins=*"
-        );
-        Configuration.browserCapabilities = options;
         open("http://localhost:9999");
     }
 
