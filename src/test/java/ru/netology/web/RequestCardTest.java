@@ -19,8 +19,8 @@ class RequestCardTest {
 
     private static final String DATE_PATTERN = "dd.MM.yyyy";
 
-    @BeforeAll
-    static void init() {
+    @BeforeEach
+    public void setup() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments(
                 "--disable-dev-shm-usage",
@@ -28,10 +28,6 @@ class RequestCardTest {
                 "--remote-allow-origins=*"
         );
         Configuration.browserCapabilities = options;
-    }
-
-    @BeforeEach
-    public void prepare() {
         open("http://localhost:9999");
     }
 
